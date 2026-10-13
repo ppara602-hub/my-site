@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МАРШУРТ ПАРКА</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    
+<section class="park-map-section" id="map-section">
+    <div class="section-container">
+        <h2 class="section-title">Интерактивный план парка</h2>
+        <p class="section-subtitle">Наведите курсор на карту, чтобы рассмотреть детали вблизи</p>
+
+        <div class="park-map-wrapper">
+
+            <div class="map-zoom-container" id="mapZoom">
+
+                <img src="park1.img.jpg" alt="Карта парка Солнечная долина" class="park-map-img">
+            </div>
+
+            <div class="park-badge-right">
+                <span class="badge-title">Семейный парк</span>
+                <span class="badge-sub">Солнечная долина</span>
+            </div>
+
+            <button class="park-link-left" id="fullscreenBtn">
+                Открыть во весь экран <i class="fa-solid fa-expand"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+    const zoomContainer = document.getElementById('mapZoom');
+    const mapImage = document.querySelector('.park-map-img');
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+    const wrapper = document.querySelector('.park-map-wrapper');
+
+    zoomContainer.addEventListener('mousemove', (e) => {
+        const { left, top, width, height } = zoomContainer.getBoundingClientRect();
+        const x = ((e.clientX - left) / width) * 100;
+        const y = ((e.clientY - top) / height) * 100;
+        mapImage.style.transformOrigin = `${x}% ${y}%`;
+    });
+
+    zoomContainer.addEventListener('mouseleave', () => {
+        mapImage.style.transformOrigin = 'center center';
+    });
+
+    fullscreenBtn.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+            wrapper.requestFullscreen().catch(err => {
+                alert(`Ошибка перехода в полноэкранный режим: ${err.message}`);
+            });
+        }
+    });
+</script>
+
+
+</body>
+</html>

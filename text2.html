@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О компании</title>
+        <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header class="site-header">
+    <div class="logo-container">
+        <div class="logo-icon">🏗️</div> 
+        <div class="logo-text">
+            <span class="brand-name">Элит.ТЧ</span>
+            <span class="brand-sub">СТРОИТЕЛЬНАЯ КОМПАНИЯ</span>
+        </div>
+    </div>
+
+    <nav class="main-nav">
+        <a href="#" class="nav-link active">Главная</a>
+        <a href="#" class="nav-link">Проекты</a>
+        <a href="#" class="nav-link">Новости</a>
+        <a href="https://w0w.ukdevilz.com/video/furry+femboy" class="nav-link">О компании</a>
+        <a href="#" class="nav-link">Контакты</a>
+    </nav>
+
+    <div class="header-phone">
+        <a href="tel:+992550072771" class="phone-button">+992550072771</a>
+    </div>
+</header>
+
+<section class="hero-slider">
+
+    <div class="slide active">
+        <img src="photo.img.jpg" alt="" class="slide-img">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+            <h1 class="slide-title">Ваш комфорт — наш главный чертеж</h1>
+        </div>
+    </div>
+
+    <div class="slide">
+        <img src="photo1.img.jpg" alt="" class="slide-img">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+            <h1 class="slide-title">Строим надежные дома для вашей семьи</h1>
+        </div>
+    </div>
+
+    <div class="slide">
+        <img src="photo2.img.jpg" alt="" class="slide-img">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+            <h1 class="slide-title">Современная архитектура в деталях</h1>
+        </div>
+    </div>
+
+    <div class="slide">
+        <img src="photo3.img.jpg" alt="" class="slide-img">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+            <h1 class="slide-title">Ваш будущий дом — наша забота</h1>
+        </div>
+    </div>
+
+    <button class="slider-arrow arrow-left">&#10094;</button>
+    <button class="slider-arrow arrow-right">&#10095;</button>
+
+    <div class="slider-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</section>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.querySelector('.arrow-left');
+        const nextBtn = document.querySelector('.arrow-right');
+        
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            if (index < 0) {
+                currentIndex = slides.length - 1;
+            } else if (index >= slides.length) {
+                currentIndex = 0;
+            } else {
+                currentIndex = index;
+            }
+
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            slides[currentIndex].classList.add('active');
+            dots[currentIndex].classList.add('active');
+        }
+
+        nextBtn.addEventListener('click', () => {
+            showSlide(currentIndex + 1);
+        });
+
+        prevBtn.addEventListener('click', () => {
+            showSlide(currentIndex - 1);
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+
+        setInterval(() => {
+            showSlide(currentIndex + 1);
+        }, 5000);
+    </script>
+
+<section class="stats-section">
+    <div class="stats-container">
+
+        <div class="stat-item">
+            <div class="stat-icon">
+                <i class="fa-solid fa-award"></i>
+            </div>
+            <div class="stat-info">
+                <span class="stat-number">2</span>
+                <span class="stat-text">лет<br>на рынке</span>
+            </div>
+        </div>
+
+        <div class="stat-item">
+            <div class="stat-icon">
+                <i class="fa-solid fa-tower-crane"></i>
+            </div>
+            <div class="stat-info">
+                <span class="stat-number">4</span>
+                <span class="stat-text">строящихся<br>жилых комплексов</span>
+            </div>
+        </div>
+
+        <div class="stat-item">
+            <div class="stat-icon">
+                <i class="fa-solid fa-building"></i>
+            </div>
+            <div class="stat-info">
+                <span class="stat-number">4</span>
+                <span class="stat-text">завершенных<br>жилых комплексов</span>
+            </div>
+        </div>
+
+        <div class="stat-item">
+            <div class="stat-icon">
+                <i class="fa-solid fa-users"></i>
+            </div>
+            <div class="stat-info">
+                <span class="stat-number">505</span>
+                <span class="stat-text">довольных<br>семей</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="catalog-section">
+    <div class="catalog-container">
+        <h2 class="catalog-title">Наши жилые комплексы</h2>
+        
+        <div class="catalog-grid">
+
+            <div class="catalog-card">
+                <div class="card-image-box bg-gradient-1">
+                    <img src="photo2.img.jpg" alt="ЖК Элит.ТЧ" >
+                    <div class="card-badges">
+                        <span class="badge badge-orange">Бизнес класс</span>
+                        <span class="badge">Комфорт</span>
+                    </div>
+                </div>
+                <div class="card-details">
+                    <h3 class="card-name">ЖК "Элит.ТЧ"</h3>
+                    <p class="card-address">Худжанд, 3-МКР</p>
+                    <div class="card-meta">
+                        <span class="meta-count"><strong>505</strong> квартиры</span>
+                        <span class="meta-price">от <strong>10000.00 TJS</strong></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="catalog-card">
+                <div class="card-image-box bg-gradient-2">
+                    <img src="Photo5.img.jpg" alt="ЖК Элит.ТЧ" >
+                    <div class="card-badges">
+                        <span class="badge badge-orange">Бизнес класс</span>
+                        <span class="badge">Комфорт+</span>
+                    </div>
+                </div>
+                <div class="card-details">
+                    <h3 class="card-name">ЖК "Скай Лайн"</h3>
+                    <p class="card-address">Худжанд, 3-МКР</p>
+                    <div class="card-meta">
+                        <span class="meta-count"><strong>368</strong> квартиры</span>
+                        <span class="meta-price">от <strong>10000.00 TJS</strong></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="catalog-card">
+                <div class="card-image-box bg-gradient-3">
+                    <img src="Photo6.img.jpg" alt="ЖК Элит.ТЧ" >
+                    <div class="card-badges">
+                        <span class="badge badge-orange">Бизнес класс</span>
+                        <span class="badge">White box</span>
+                    </div>
+                </div>
+                <div class="card-details">
+                    <h3 class="card-name">ЖК "Мираж"</h3>
+                    <p class="card-address">Худжанд, 3-МКР</p>
+                    <div class="card-meta">
+                        <span class="meta-count"><strong>172</strong> квартиры</span>
+                        <span class="meta-price">от <strong>10000.00 TJS</strong></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="catalog-card">
+                <div class="card-image-box bg-gradient-4">
+                    <img src="photo7.img.jpg" alt="ЖК Элит.ТЧ" >
+                    <div class="card-badges">
+                        <span class="badge badge-orange">Бизнес класс</span>
+                        <span class="badge">White box</span>
+                    </div>
+                </div>
+                <div class="card-details">
+                    <h3 class="card-name">ЖК "Эклипс"</h3>
+                    <p class="card-address">Худжанд, 3-МКР</p>
+                    <div class="card-meta">
+                        <span class="meta-count"><strong>361</strong> квартиры</span>
+                        <span class="meta-price">от <strong>8000.00 TJS</strong></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="catalog-container">
+    <h2 class="catalog-title">Наш парк</h2>
+
+<section class="park-section">
+    <div class="park-container">
+        
+        <div class="park-map-wrapper">
+            <img src="park1.img.jpg" alt="Карта парка Солнечная долина" class="park-map-img">
+            <div class="park-badge-right">
+                <span class="badge-title">Семейный парк</span>
+                <span class="badge-sub">Солнечная долина</span>
+            </div>
+
+            <a href="text3.html" target="_blank" class="park-link-left">
+                Перейти <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="reviews-section">
+    <div class="reviews-container">
+        <h2 class="reviews-main-title">Отзывы наших клиентов</h2>
+        <div class="reviews-grid" id="reviewsGrid">
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-user-info">
+                        <h3 class="user-name">Хайруло</h3>
+                        <span class="review-date">10 октября 2026</span>
+                    </div>
+                    <div class="user-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <p class="review-text">Купили квартиру в ЖК «Скай Лайн». Очень довольны качеством постройки и тем, что компания строго соблюдает сроки. Отделка white box выполнена на совесть, стены идеально ровные!</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-user-info">
+                        <h3 class="user-name">Нурматов Парвиз</h3>
+                        <span class="review-date">05 октября 2026</span>
+                    </div>
+                    <div class="user-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                </div>
+                <p class="review-text">Надежная компания «Элит.ТЧ». Менеджеры в офисе продаж в Худжанде помогли подобрать идеальную планировку для нашей большой семьи и подробно объяснили все условия рассрочки.</p>
+            </div>
+
+        </div>
+
+        <div class="add-review-box">
+            <h3>Оставить свой отзыв</h3>
+            <form id="reviewForm" class="review-form">
+                <div class="form-row">
+                    <input type="text" id="reviewerName" placeholder="Ваше имя и фамилия" required>
+                    
+                    <div class="rating-select">
+                        <span class="rating-label">Ваша оценка:</span>
+                        <div class="stars-radio" id="starRatingSelect">
+                            <i class="fa-solid fa-star star-opt active" data-value="1"></i>
+                            <i class="fa-solid fa-star star-opt active" data-value="2"></i>
+                            <i class="fa-solid fa-star star-opt active" data-value="3"></i>
+                            <i class="fa-solid fa-star star-opt active" data-value="4"></i>
+                            <i class="fa-solid fa-star star-opt active" data-value="5"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <textarea id="reviewerText" rows="4" placeholder="Напишите ваше мнение о компании или жилом комплексе..." required></textarea>
+                
+                <button type="submit" class="btn-submit-review">Отправить отзыв <i class="fa-regular fa-paper-plane"></i></button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-column footer-about">
+            <div class="footer-logo">
+                <span class="f-brand-name">ЭЛИТ.ТЧ</span>
+                <span class="f-brand-sub">СТРОИТЕЛЬНАЯ КОМПАНИЯ</span>
+            </div>
+            <p class="footer-desc">
+                Многолетний опыт, надежность и безукоризненное соблюдение сроков. Строим современные жилые комплексы и создаем пространство для счастливой жизни вашей семьи.
+            </p>
+            <div class="footer-social-links">
+                <a href="#" target="" aria-label="#"></a>
+                <a href="#" target="" aria-label="#"></a>
+                <a href="#" target="" aria-label="#"></a>
+            </div>
+        </div>
+
+        <div class="footer-column footer-nav">
+            <h4 class="footer-title">Компания</h4>
+            <ul class="footer-menu">
+                <li><a href="#">Главная</a></li>
+                <li><a href="#catalog-section">Наши проекты</a></li>
+                <li><a href="#">Новости компании</a></li>
+                <li><a href="#map-section">Инфраструктура</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column footer-contacts">
+            <h4 class="footer-title">Офис продаж</h4>
+            <ul class="contacts-list">
+                <li>
+                    <i class="fa-solid fa-location-dot contact-icon"></i>
+                    <span>г. Худжанд, 3МКР</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-phone contact-icon"></i>
+                    <a href="tel:+992550072771">+992 (55) 007-2771</a>
+                </li>
+                <li>
+                    <i class="fa-regular fa-clock contact-icon"></i>
+                    <span>Ежедневно: 08:00 - 21:00</span>
+                </li>
+                <li>
+                    <i class="fa-regular fa-envelope contact-icon"></i>
+                    <a href="mailto:ppara602@gmail.com">ppara602@gmail.com</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    
+</footer>
+
+<script>
+
+    const starSelection = document.querySelectorAll('#starRatingSelect .star-opt');
+    let chosenRating = 5;
+
+    starSelection.forEach(star => {
+        star.addEventListener('click', () => {
+            chosenRating = parseInt(star.getAttribute('data-value'));
+            starSelection.forEach(s => {
+                const sValue = parseInt(s.getAttribute('data-value'));
+                if (sValue <= chosenRating) {
+                    s.classList.add('active');
+                } else {
+                    s.classList.remove('active');
+                }
+            });
+        });
+    });
+
+    const reviewForm = document.getElementById('reviewForm');
+    const reviewsGrid = document.getElementById('reviewsGrid');
+
+    reviewForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const nameInput = document.getElementById('reviewerName').value;
+        const textInput = document.getElementById('reviewerText').value;
+        const currentDate = new Date().toLocaleDateString('ru-RU', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+        });
+
+        let starsHTML = '';
+        for (let i = 1; i <= 5; i++) {
+            if (i <= chosenRating) {
+                starsHTML += '<i class="fa-solid fa-star"></i> ';
+            } else {
+                starsHTML += '<i class="fa-regular fa-star"></i> ';
+            }
+        }
+
+        const newCard = document.createElement('div');
+        newCard.classList.add('review-card');
+        newCard.innerHTML = `
+            <div class="review-header">
+                <div class="review-user-info">
+                    <h3 class="user-name">${nameInput}</h3>
+                    <span class="review-date">${currentDate}</span>
+                </div>
+                <div class="user-stars">
+                    ${starsHTML}
+                </div>
+            </div>
+            <p class="review-text">${textInput}</p>
+        `;
+
+        reviewsGrid.insertBefore(newCard, reviewsGrid.firstChild);
+        reviewForm.reset();
+        chosenRating = 5;
+        starSelection.forEach(s => s.classList.add('active'));
+        newCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+</script>
+
+</body>
+</html>
